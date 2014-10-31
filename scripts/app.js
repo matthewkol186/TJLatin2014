@@ -11,7 +11,7 @@
 
 		        $('.photo-carousel').slick({
 		            autoplay: true,
-		            autoplaySpeed: 5000,
+		            autoplaySpeed: 8000,
 		            dots: true
 		        });
 			});
