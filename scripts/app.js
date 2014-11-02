@@ -1,6 +1,6 @@
 	var app = angular
 		.module('LHSWeb', [
-			'ui.router'
+			'ui.router', 'uiRouterStyles'
 		])
 		.controller('CarouselCtrl', function($scope){
 			$scope.$on('$viewContentLoaded', function() {
@@ -29,6 +29,6 @@
 				})
 				.state('about', {
 					url: '/about',
-					templateUrl: 'views/about.html'
+					templateUrl: 'views/about.html',
 				})
 		})
