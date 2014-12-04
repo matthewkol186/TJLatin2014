@@ -1,0 +1,43 @@
+<div ng-hide="browsingAlbums">
+    <a href ng-click="switch()"> Back to All Albums</a>
+    <h1> {{currentAlbum.title}}</h1>
+
+            <section id = "photos">
+                    <a href ng-repeat="image in currentAlbum.images" ng-href = "img/albums/{{currentAlbum.filepath}}/{{image.filename}}" data-toggle="lightbox" data-gallery="multiimages" data-title="{{image.title}}"> 
+                        <img class="image-container" ng-src ="img/albums/{{currentAlbum.filepath}}/{{image.filename}}"></a>
+                    </a>
+
+            </section>
+</div>
+
+<div ng-show="browsingAlbums">
+
+    <div class = "container">
+        <div class = "row">
+            <h1>
+                Latin Honor Society Picturae
+            </h1>
+        </div>
+
+    <div class = "container" ng-repeat="year in years">
+        <div class = "row">
+            <h2 style="text-align:center; margin-bottom:20px;">
+                {{year}}
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-4 col-xs-6" ng-repeat="album in thumbs[year]">
+
+                <a href ng-click="switch(); setCurrentAlbum(album);" style="text-decoration:none;" class="thumbnail-link-title">
+                <div ng-style="{'height':'calc(.25 * 100vh)', 'background-image':'url('+album.thumbnail+')', 'background': 'linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('+album.thumbnail+')', 'background-position': 'center', 'background-repeat':'no-repeat', 'background-size':'cover', 'border-style':'solid', 'border-color': '#a1499e',}" class="thumbnail">
+
+                    <h3 style="text-align:center; margin:0px; padding: 0px; position: relative; top: 50%; transform: translateY(-50%); " class="thumbnail-link-title">{{album.title}}</h3>
+
+                </div>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class = "container">
+	
+	<div class = "row">
+
+		<div class = "col-md-6"> 
+		
+		<iframe ng-src="{{currentUrl}}" width="100%" height="100vh" style="border: none; height:90vh"></iframe>
+
+		</div>
+
+		<div class = "col-md-6">
+
+			<h1>
+				TJ LHS Scribe
+			</h1>
+
+			<p>
+				Keep up with the latest in TJ Latin with our bi-monthly newsletter <em>The Scribe</em> written by our current Auctor, <b>Sandy Cho</b>!
+			</p>
+
+			<h2>
+				Past Newsletters
+			</h2>
+
+			<div ng-repeat="(key, value) in yearLinks">
+				<h3>
+					{{key}}
+				</h3>
+				<div ng-repeat="name in value">
+					<a ng-click="setNewSource(name.link)">{{name.month}}
+					</a>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div> 
